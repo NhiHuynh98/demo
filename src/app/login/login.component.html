@@ -1,0 +1,30 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div *ngIf="form" class="wrap-login100">
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login100-form validate-form">
+        <span class="login100-form-title p-b-43"> Login to continue</span>
+
+        <app-input [submitted]="submitted" [parentForm]="form" label="UserName" fieldName="username"
+          formControlName="username"></app-input>
+
+        <app-password [submitted]="submitted" [parentForm]="form" label="Password" fieldName="password"
+          formControlName="password"></app-password>
+
+         <div class='text-danger' *ngIf="errorsBE">User account or password incorrect</div> 
+
+        <div class="form-group btn-action">
+          <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+          </button>
+          <a routerLink="../register" class="btn btn-link">Register</a>
+        </div>
+      </form>
+
+      <div class="login100-more" style="background-image: url('../../assets/img/bg-01.jpeg');">
+
+      </div>
+    </div>
+  </div>
+</div>

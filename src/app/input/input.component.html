@@ -1,0 +1,9 @@
+<div class="form-group" *ngIf="formField">
+  <label [for]="fieldName">{{ label }}</label>
+  <input id="fieldName" name="fieldName" type='text' class='form-control' [value]="value" [disabled]="isDisabled"
+    (input)="onChange($event)" (blur)="touched"
+    [ngClass]="{ 'is-invalid': submitted && formField.hasError('required') }">
+  <div *ngIf="submitted && formField.hasError('required')" class="invalid-feedback">
+    <div *ngIf="formField.hasError('required')">Username is required</div>
+  </div>
+</div>
