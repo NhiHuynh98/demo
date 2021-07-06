@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   errorsBE = false;
+  check: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -29,6 +30,11 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
+
+  hdCheck() {
+    this.check = !this.check
+  }
+
 
   onSubmit() {
     this.submitted = true;
@@ -48,8 +54,7 @@ export class LoginComponent implements OnInit {
 
     localStorage.setItem("User", JSON.stringify(this.form.value))
 
-    const url = this.route.snapshot.queryParams['returnURL'] || '/'
-
+    const url = this.route.snapshot.queryParams['returnURL'] || '/?test=true'
 
     this.router.navigateByUrl(url)
   }
