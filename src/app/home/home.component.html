@@ -4,7 +4,7 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="user">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -13,7 +13,14 @@
           <a class="nav-link" href="#">Hello : {{ user.username }} </a>
         </li>
       </ul>
+      <div style="margin-right: 10px;"><button (click)="hdClick()" class='btn-success btn'>View profile</button></div>
+      <div style="margin-right: 10px;"><button routerLink="/count" class='btn-danger btn'>Show count</button></div>
       <button (click)="handleSubmit()" class="btn btn-outline-success" type="submit">Logout</button>
     </div>
   </div>
 </nav>
+<div class='count'>
+  <button (click)="hdCountDown()" class="btn btn-outline-success">Delete</button>
+  <div class="count-value">{{ this.count }}</div>
+  <button (click)="hdCountUp()" class="btn btn-outline-success">Add</button>
+</div>

@@ -13,6 +13,13 @@ import { InputComponent } from './input/input.component';
 import { PasswordComponent } from './password/password.component';
 import { EmailComponent } from './email/email.component';
 import { PhoneComponent } from './phone/phone.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderModule } from './header/header/header.module';
+import { FooterModule } from './footer/footer/footer.module';
+import { ShareService } from './share.service'
+import { CountService } from './service/count.service'
+import { LayoutModule } from './layout/layout.module'
+
 
 @NgModule({
   declarations: [
@@ -23,7 +30,8 @@ import { PhoneComponent } from './phone/phone.component';
     InputComponent,
     PasswordComponent,
     EmailComponent,
-    PhoneComponent
+    PhoneComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,9 +39,18 @@ import { PhoneComponent } from './phone/phone.component';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HeaderModule,
+    FooterModule,
+    LayoutModule
   ],
-  providers: [],
+  providers: [
+    ShareService,
+    CountService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+// ShareModule: chua service de module khac xai. 

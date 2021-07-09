@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
 
     localStorage.setItem("User", JSON.stringify(this.form.value))
 
-    const url = this.route.snapshot.queryParams['returnURL'] || '/?test=true'
+    const url = this.route.snapshot.queryParams['returnURL'] || '/'
 
     this.router.navigateByUrl(url)
   }

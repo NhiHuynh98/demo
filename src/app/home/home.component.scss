@@ -1,0 +1,14 @@
+.test {
+  width: 100px;
+  height: 100px;
+}
+.count {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .count-value {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
